@@ -15,8 +15,8 @@ const ReasonList = () => {
   return (
     <Wrapper>
       <View style={styles.ListWrapper}>
-        <ReasonsDisplay left />
-        <ReasonsDisplay />
+        <ReasonsDisplay headline="Pros" left />
+        <ReasonsDisplay headline="Cons" />
       </View>
     </Wrapper>
   );

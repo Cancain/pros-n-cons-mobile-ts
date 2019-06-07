@@ -1,14 +1,17 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
+import Reason from "./Reason/Reason";
+
 interface Props {
   left?: boolean;
+  headline: string;
 }
 
 const ReasonsDisplay = (props: Props) => {
   const styles = StyleSheet.create({
     Container: {
-      width: "48.5%",
+      width: "100%",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
@@ -32,26 +35,28 @@ const ReasonsDisplay = (props: Props) => {
       marginLeft: "auto",
       marginRight: "auto",
       width: "100%"
-    },
-    TextWrapper: {
-      maxWidth: "90%"
     }
   });
+
+  const renderHeadlines = (
+    <Text style={{ textAlign: "center", fontSize: 20 }}>{props.headline}</Text>
+  );
+
+  const renderLabels = (
+    <View style={styles.LabelWrapper}>
+      <Text style={{ marginLeft: "1.5%", fontWeight: "bold" }}>Reason</Text>
+      <Text style={{ marginRight: "1.5%", fontWeight: "bold" }}>Strength</Text>
+    </View>
+  );
+
+  const renderReasons = <Reason text="test" strength={2} />;
   return (
-    <View style={styles.Container}>
-      <View style={styles.LabelWrapper}>
-        <Text style={{ marginLeft: "1.5%", fontWeight: "bold" }}>Reason</Text>
-        <Text style={{ marginRight: "1.5%", fontWeight: "bold" }}>
-          Strength
-        </Text>
-      </View>
-      <View style={styles.ReasonWrapper}>
-        <View style={styles.LabelWrapper}>
-          <View style={styles.TextWrapper}>
-            <Text>asdkmjnbasdkj</Text>
-          </View>
-          <Text>2</Text>
-        </View>
+    <View style={{ width: "48.5%" }}>
+      {renderHeadlines}
+      <View style={styles.Container}>
+        {renderLabels}
+        {renderReasons}
+        {renderReasons}
       </View>
     </View>
   );
