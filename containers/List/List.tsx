@@ -4,7 +4,7 @@ import InputField from "../../components/InputField/InputField";
 import ReasonList from "../ReasonList/ReasonList";
 
 const List = () => {
-  const [reasons, setReasons] = useState<Array<string>>([]);
+  const [reasons, setReasons] = useState<Array<Object>>([]);
 
   const addReason = (reason: string) => {
     const newReasons = reasons;
@@ -12,10 +12,14 @@ const List = () => {
     setReasons(newReasons);
   };
 
+  const getReasons = () => {
+    return reasons;
+  };
+
   return (
     <View>
       <InputField addReason={(reason: string) => addReason(reason)} />
-      <ReasonList />
+      <ReasonList reasons={reasons} />
     </View>
   );
 };
