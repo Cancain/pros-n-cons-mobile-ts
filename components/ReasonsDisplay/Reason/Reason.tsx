@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 interface Props {
-  text: string;
-  strength: number;
+  text?: String;
+  strength?: Number;
 }
 
 const Reason = (props: Props) => {

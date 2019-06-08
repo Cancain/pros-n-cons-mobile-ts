@@ -19,7 +19,7 @@ const ReasonList = () => {
   });
 
   const addReason = (reason: Reason) => {
-    const newReasons: Array<Reason> = reasons;
+    const newReasons: Array<Reason> = [...reasons];
     newReasons.push(reason);
     setReasons(newReasons);
     sortReasons();
@@ -29,15 +29,23 @@ const ReasonList = () => {
     if (reasons) {
       reasons.map((reason, index) => {
         if (reason.isPro) {
-          const newPros: Array<Reason> = pros;
+          const newPros: Array<Reason> = [...pros];
           newPros.push(reason);
           setPros(newPros);
         } else {
-          const newCons: Array<Reason> = cons;
+          const newCons: Array<Reason> = [...cons];
           newCons.push(reason);
           setCons(newCons);
         }
       });
+    }
+  };
+
+  const updateReasons = (isPro: Boolean) => {
+    if (isPro) {
+      return pros;
+    } else {
+      return cons;
     }
   };
 
