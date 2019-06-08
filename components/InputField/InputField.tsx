@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import SelectorBtn from "../UI/SelectorBtn/SelectorBtn";
 import Btn from "../UI/Btn/Btn";
 import ValueSlide from "../UI/ValueSlide/ValueSlide";
 import Wrapper from "../../containers/Wrapper/Wrapper";
+import Reason from "../../Interfaces/Reason";
 
 interface Props {
   addReason: Function;
@@ -42,9 +43,9 @@ const InputField = (props: Props) => {
   };
 
   const addReason = () => {
-    const reason = {
-      text,
+    const reason: Reason = {
       isPro,
+      text,
       strength
     };
 
