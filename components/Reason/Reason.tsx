@@ -24,7 +24,8 @@ const Reason = (props: Props) => {
     Text: {
       marginLeft: "2%",
       marginTop: "auto",
-      marginBottom: "auto"
+      marginBottom: "auto",
+      maxWidth: "80%"
     },
     TextRight: {
       marginRight: "2%",

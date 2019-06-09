@@ -1,49 +1,117 @@
 import React, { useState, useContext } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Wrapper from "../Wrapper/Wrapper";
-import ReasonsDisplay from "../../components/ReasonsDisplay/ReasonsDisplay";
 import Reason from "../../Interfaces/Reason";
 import InputField from "../../components/InputField/InputField";
+import ReasonComponent from "../../components/Reason/Reason";
 
 const ReasonList = () => {
-  const [reasons, setReasons] = useState<Array<Reason>>([]);
   const [pros, setPros] = useState<Array<Reason>>([]);
   const [cons, setCons] = useState<Array<Reason>>([]);
 
   const styles = StyleSheet.create({
-    ListWrapper: {
+    Rows: {
+      display: "flex",
+      flexDirection: "column"
+    },
+    Columns: {
+      display: "flex",
+      flexDirection: "row"
+    },
+    Headlines: {
       display: "flex",
       flexDirection: "row",
-      justifyContent: "center"
+      justifyContent: "space-evenly"
+    },
+    LabelWrapper: {
+      display: "flex",
+      flexDirection: "row",
+      width: "48.5%",
+      justifyContent: "space-between",
+      backgroundColor: "rgba(0,0,0,0.2)",
+      borderRadius: 7,
+      marginRight: "auto",
+      marginLeft: "auto"
+    },
+    ReasonWrapper: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      width: "48.5%",
+      marginLeft: "1%"
     }
   });
 
-  const addReason = (reason: Reason) => {
-    const newReasons: Array<Reason> = [...reasons];
-    newReasons.push(reason);
-    setReasons(newReasons);
-    sortReasons();
-  };
-
-  const sortReasons = () => {
-    if (reasons) {
-      reasons.map(reason => {
-        if (reason.isPro) {
-          const newPros: Array<Reason> = [...pros];
-          newPros.push(reason);
-          setPros(newPros);
-        } else {
-          const newCons: Array<Reason> = [...cons];
-          newCons.push(reason);
-          setCons(newCons);
-        }
-      });
+  const sortReason = (reason: Reason) => {
+    if (reason.isPro) {
+      const newPros: Array<Reason> = [...pros];
+      newPros.push(reason);
+      setPros(newPros);
+    } else {
+      const newCons: Array<Reason> = [...cons];
+      newCons.push(reason);
+      setCons(newCons);
     }
   };
 
+  const renderHeadlines = (
+    <View style={styles.Headlines}>
+      <Text style={{ marginRight: "20%", fontSize: 20, fontWeight: "bold" }}>
+        Pros
+      </Text>
+      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Cons</Text>
+    </View>
+  );
+
+  const renderLabels = (
+    <View style={styles.Columns}>
+      <View style={styles.LabelWrapper}>
+        <Text style={{ marginLeft: 10 }}>Reason</Text>
+        <Text style={{ marginRight: 10 }}>Strength</Text>
+      </View>
+
+      <View style={styles.LabelWrapper}>
+        <Text style={{ marginLeft: 10 }}>Reason</Text>
+        <Text style={{ marginRight: 10 }}>Strength</Text>
+      </View>
+    </View>
+  );
+
+  let renderPros = null;
+  if (pros)
+    renderPros = pros.map((reason, index) => {
+      return (
+        <ReasonComponent
+          text={reason.text}
+          strength={reason.strength}
+          key={index}
+        />
+      );
+    });
+
+  let renderCons = null;
+  if (pros)
+    renderCons = cons.map((reason, index) => {
+      return (
+        <ReasonComponent
+          text={reason.text}
+          strength={reason.strength}
+          key={index}
+        />
+      );
+    });
+
   return (
     <Wrapper>
-      <InputField addReason={(reason: Reason) => addReason(reason)} />
+      <InputField addReason={(reason: Reason) => sortReason(reason)} />
+      <View style={styles.Rows}>
+        {renderHeadlines}
+        {renderLabels}
+        <View style={styles.Columns}>
+          <View style={styles.ReasonWrapper}>{renderPros}</View>
+          <View style={styles.ReasonWrapper}>{renderCons}</View>
+        </View>
+      </View>
     </Wrapper>
   );
 };
