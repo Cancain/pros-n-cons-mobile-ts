@@ -6,19 +6,11 @@ import Reason from "../../Interfaces/Reason";
 
 interface Props {
   left?: boolean;
-  headline: string;
-  reasons?: Array<Reason>;
+  headline: String;
+  reasons: Array<Reason>;
 }
 
-const testReason: Reason = {
-  text: "lasd",
-  strength: 2,
-  isPro: true
-};
-
 const ReasonsDisplay = (props: Props) => {
-  const [reasons, setReasons] = useState();
-
   const styles = StyleSheet.create({
     Container: {
       width: "100%",
@@ -60,8 +52,8 @@ const ReasonsDisplay = (props: Props) => {
   );
   let renderReasons = null;
   if (props.reasons) {
-    renderReasons = props.reasons.map((reason, index) => {
-      console.warn(reason.text);
+    const r = [...props.reasons];
+    renderReasons = r.map((reason: Reason, index: number) => {
       return (
         <ReasonComponent
           text={reason.text}

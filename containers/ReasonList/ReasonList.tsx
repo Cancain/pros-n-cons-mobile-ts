@@ -27,7 +27,7 @@ const ReasonList = () => {
 
   const sortReasons = () => {
     if (reasons) {
-      reasons.map((reason, index) => {
+      reasons.map(reason => {
         if (reason.isPro) {
           const newPros: Array<Reason> = [...pros];
           newPros.push(reason);
@@ -41,25 +41,9 @@ const ReasonList = () => {
     }
   };
 
-  const updateReasons = (isPro: Boolean) => {
-    if (isPro) {
-      return pros;
-    } else {
-      return cons;
-    }
-  };
-
-  const renderLists = (
-    <View style={styles.ListWrapper}>
-      <ReasonsDisplay headline="Pros" reasons={pros} left />
-      <ReasonsDisplay headline="Cons" reasons={cons} />
-    </View>
-  );
-
   return (
     <Wrapper>
       <InputField addReason={(reason: Reason) => addReason(reason)} />
-      {renderLists}
     </Wrapper>
   );
 };
