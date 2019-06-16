@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { View, StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 
 interface Props {
   width?: string;
@@ -11,7 +12,7 @@ interface Props {
 const Wrapper = (props: Props) => {
   const styles = StyleSheet.create({
     Wrapper: {
-      backgroundColor: "rgba(0, 0, 0, 0.2)",
+      backgroundColor: colors.foreGround,
       width: props.width ? props.width : "95%",
       marginLeft: props.marginLeft ? props.marginLeft : "auto",
       marginRight: props.marginRight ? props.marginRight : "auto",

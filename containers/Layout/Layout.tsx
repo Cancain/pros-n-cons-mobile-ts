@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View } from "react-native";
 import ReasonList from "../ReasonList/ReasonList";
 import Header from "../Header/Header";
 import { colors } from "../../constants/colors";

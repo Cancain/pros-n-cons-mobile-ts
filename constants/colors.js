@@ -1,4 +1,7 @@
 export const colors = {};
 
-colors.background = "#3F334E";
-colors.text = "#776A88";
+colors.background = "#3E3B82";
+colors.text = "white";
+colors.foreGround = "#14115F";
+
+export default colors;

@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import Text from "../Text/Text";
 
 interface Props {
-  text?: String;
-  strength?: Number;
+  text?: string;
+  strength?: number;
 }
 
 const Reason = (props: Props) => {

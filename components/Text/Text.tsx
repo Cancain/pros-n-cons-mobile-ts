@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
-import { colors } from "../../constants/colors";
+import colors from "../../constants/colors";
 
 type Props = {
-  children: string;
+  children?: any;
   style: object;
 };
 
