@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableHighlight } from "react-native";
 import Text from "./Text";
+import colors from "../constants/colors";
 
 interface Props {
   selectedColor: string;
@@ -12,7 +13,7 @@ interface Props {
 const SelectorBtn = (props: Props) => {
   const styles = StyleSheet.create({
     Selector: {
-      backgroundColor: "rgba(0,0,0,0.1)",
+      backgroundColor: colors.button,
       marginTop: 10,
       marginHorizontal: 10,
       padding: 5,
@@ -26,7 +27,7 @@ const SelectorBtn = (props: Props) => {
     Selected: {
       backgroundColor: props.selectedColor
         ? props.selectedColor
-        : "rgba(0,0,0,0.3)"
+        : colors.darkOpacity
     },
     Text: {
       marginTop: "auto",
