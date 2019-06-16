@@ -1,19 +1,20 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import ReasonList from "./ReasonList";
 import Header from "./Header";
 import { colors } from "../constants/colors";
 
 const Layout = () => {
   return (
-    <View
+    <ScrollView
       style={{
-        backgroundColor: colors.background
+        backgroundColor: colors.background,
+        height: "100%"
       }}
     >
       <Header />
       <ReasonList />
-    </View>
+    </ScrollView>
   );
 };
 
