@@ -1,10 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import SelectorBtn from "../UI/SelectorBtn/SelectorBtn";
 import Btn from "../UI/Btn/Btn";
 import ValueSlide from "../UI/ValueSlide/ValueSlide";
 import Wrapper from "../../containers/Wrapper/Wrapper";
 import Reason from "../../Interfaces/Reason";
+import colors from "../../constants/colors";
 
 interface Props {
   addReason: Function;
@@ -30,6 +31,7 @@ const InputField = (props: Props) => {
       justifyContent: "center"
     },
     InputField: {
+      color: colors.text,
       width: "70%",
       backgroundColor: "rgba(0,0,0,0.4)",
       borderRadius: 7,

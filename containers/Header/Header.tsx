@@ -1,9 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import Text from "../../components/Text/Text";
+import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
   Wrapper: {
-    backgroundColor: "rgba(0,0,0,0.4)",
+    backgroundColor: colors.foreGround,
     marginBottom: 2.5,
     height: 60
   },
