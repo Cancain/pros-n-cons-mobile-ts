@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
-import SelectorBtn from "../UI/SelectorBtn/SelectorBtn";
-import Btn from "../UI/Btn/Btn";
-import ValueSlide from "../UI/ValueSlide/ValueSlide";
-import Wrapper from "../../containers/Wrapper/Wrapper";
-import Reason from "../../Interfaces/Reason";
-import colors from "../../constants/colors";
+import SelectorBtn from "./SelectorBtn";
+import Btn from "./Btn";
+import ValueSlide from "./ValueSlide";
+import Wrapper from "../containers/Wrapper";
+import Reason from "../Interfaces/Reason";
+import colors from "../constants/colors";
 
 interface Props {
   addReason: Function;

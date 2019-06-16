@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import Wrapper from "../Wrapper/Wrapper";
-import Reason from "../../Interfaces/Reason";
-import InputField from "../../components/InputField/InputField";
-import ReasonComponent from "../../components/Reason/Reason";
-import Text from "../../components/Text/Text";
+import Wrapper from "./Wrapper";
+import Reason from "../Interfaces/Reason";
+import InputField from "../components/InputField";
+import ReasonComponent from "../components/Reason";
+import Text from "../components/Text";
 
 const ReasonList = () => {
   const [pros, setPros] = useState<Reason[]>([]);

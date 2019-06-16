@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Text from "../../Text/Text";
+import Text from "./Text";
 import Slider from "@react-native-community/slider";
 
 interface Props {

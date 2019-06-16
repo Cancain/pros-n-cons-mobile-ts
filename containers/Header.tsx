@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import Text from "../../components/Text/Text";
-import colors from "../../constants/colors";
+import Text from "../components/Text";
+import colors from "../constants/colors";
 
 const styles = StyleSheet.create({
   Wrapper: {
