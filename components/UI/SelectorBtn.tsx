@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, TouchableHighlight } from "react-native";
 import Text from "./Text";
-import colors from "../constants/colors";
+import colors from "../../constants/colors";
 
 interface Props {
   selectedColor: string;

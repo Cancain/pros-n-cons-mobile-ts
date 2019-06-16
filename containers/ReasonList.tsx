@@ -4,7 +4,7 @@ import Wrapper from "./Wrapper";
 import Reason from "../Interfaces/Reason";
 import InputField from "../components/InputField";
 import ReasonComponent from "../components/Reason";
-import Text from "../components/Text";
+import Text from "../components/UI/Text";
 
 const ReasonList = () => {
   const [pros, setPros] = useState<Reason[]>([]);

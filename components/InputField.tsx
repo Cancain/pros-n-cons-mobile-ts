@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
-import SelectorBtn from "./SelectorBtn";
-import Btn from "./Btn";
+import SelectorBtn from "./UI/SelectorBtn";
+import Btn from "./UI/Btn";
 import ValueSlide from "./ValueSlide";
 import Wrapper from "../containers/Wrapper";
 import Reason from "../Interfaces/Reason";

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { View, StyleSheet } from "react-native";
-import Text from "./Text";
+import Text from "./UI/Text";
 
 interface Props {
   text?: string;
