@@ -6,8 +6,8 @@ import InputField from "../../components/InputField/InputField";
 import ReasonComponent from "../../components/Reason/Reason";
 
 const ReasonList = () => {
-  const [pros, setPros] = useState<Array<Reason>>([]);
-  const [cons, setCons] = useState<Array<Reason>>([]);
+  const [pros, setPros] = useState<Reason[]>([]);
+  const [cons, setCons] = useState<Reason[]>([]);
 
   const styles = StyleSheet.create({
     Rows: {
